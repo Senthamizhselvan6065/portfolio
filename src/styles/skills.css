@@ -1,0 +1,136 @@
+.skills-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 6rem;
+    margin-bottom: 3rem;
+}
+
+.skills-container h2{
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: var(--o-red);
+    margin-top: 3rem;
+}
+
+.skills-container > div{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.skills-container h2 span{
+    color: var(--gray);
+}
+
+.skills{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.8rem;
+}
+
+.skill{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.6rem;
+}
+
+.skill-name{
+    font-size: 1rem;
+    color: var(--gray);
+}
+
+.skill-bar{
+    width: 100%;
+    height: 8px;
+    border: 1px solid var(--o-red);
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.skill-per{
+    height: 5px;
+    background-color: var(--gray);
+    border-radius: 5px;
+    position: relative;
+    animation: fillBar 3s;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.skill-per::before{
+    content: attr(per);
+    position: absolute;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    top: -40px;
+    right: 0;
+    background-color: var(--gray);
+    transform: translateX(50%);
+}
+
+.skill-per::after{
+    content: " ";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--gray);
+    top: -18px;
+    right: 0;
+    transform: translateX(50%) rotate(45deg);
+}
+
+@keyframes fillBar {
+     from{
+        width: 0;
+     }to{
+        width: 100%;
+     }
+}
+
+
+@media (max-width: 900px) {
+    .skills-container > div{
+        width: 60%;
+        flex-direction: column;
+    }
+    .skills{
+        width: 100%;
+    }
+    .skills-container h2{
+        font-size: 2rem;
+    }
+    .skills-container{
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .skills-container > div{
+        width: 90%;
+        flex-direction: column;
+    }
+    .skills{
+        width: 100%;
+    }
+    .skills-container h2{
+        font-size: 1.8rem;
+        margin-top: 1rem;
+    }
+    .skills-container{
+        gap: 2rem;
+        margin: 1rem 0;
+    }
+}
