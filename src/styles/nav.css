@@ -11,22 +11,22 @@ nav{
     z-index: 33;
 }
 
-.logo h3{
+.logo__title{
     border: 1.5px solid var(--gray);
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 1px;
     padding: 4px 10px;
-    border-radius: 5px;
+    border-radius: 2px;
     color: var(--o-red);
     font-size: 1rem;
 }
 
-.logo h3 span{
+.logo__title--title{
     color: var(--gray);
 }
 
-ul{
+.navigation{
     list-style: none;
     display: flex;
     justify-content: center;
@@ -34,26 +34,55 @@ ul{
     gap: 50px;
 }
 
-ul li a{
+.navigation__menu-item--link{
+    position: relative;
+}
+
+.navigation__menu-item--link::after{
+    content: " ";
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    opacity: 0;
+    transition: transform 1s ease-in;
+} 
+
+.navigation__menu-item--link:hover::after{
+    width: 100%;
+    background-color: var(--o-red);
+    opacity: 1;
+    animation: nav-ani 0.3s linear;
+}
+
+@keyframes nav-ani {
+     from{
+        width: 0%;
+     }to{
+        width: 100%;
+     }
+}
+
+.navigation__menu-item--link{
     color: var(--gray);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.9rem;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
-ul button{
-    padding: 6px 20px;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    font-weight: 600;
-    border: none;
-    outline: none;
+.navigation__hire-btn--link{
+    padding: 7px 15px;
     border-radius: 5px;
-    background-color: var(--o-red);
-    color: var(--gray);
-    cursor: pointer;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
     text-transform: uppercase;
+    line-height: 1rem;
+    font-weight: 500;
+    color: var(--o-red);
+    border: 1.5px solid var(--gray);
+    cursor: pointer;
 }
 
 .menu-btn{
@@ -61,13 +90,13 @@ ul button{
 }
 
 @media (max-width: 1100px) {
-    nav{
+    .nav-container{
         padding: 10px 20px;
     }
-    ul li a{
+    .navigation__menu-item--link{
         font-size: 0.9rem;
     }
-    ul button{
+    .navigation__hire-btn--link{
         font-size: 0.9rem;
     }
 }
@@ -90,7 +119,7 @@ ul button{
         background-color: var(--l-black);
         opacity: 0.9;
         transition: all 0.3s ease;
-        width: 50%;
+        width: 60%;
         height: 100vh;
         position: absolute;
         left: -100%;
@@ -103,38 +132,21 @@ ul button{
         left: 0;
         transition: all 0.3s ease;
     }
-    .navigation button{
+    .navigation__hire-btn--link{
         width: 100%;
         padding: 10px 20px;
     }
 }
 
 
-@media (max-width: 600px) {
-    .menu-btn{
-        font-size: 1.9rem;
-    }
-    .logo h3{
-        font-size: 0.9rem;
-    }
-    .navigation.active{
-        width: 100%;
-    }
-    .navigation button{
-        width: 50%;
-        font-size: small;
-        padding: 8px 20px;
-    }
-    .navigation li a{
-        font-size: small;
+@media (max-width: 768px) {
+    .navigation{
+        width: 70%;
     }
 }
 
-@media (max-width: 420px) {
-    .menu-btn{
-        font-size: 1.9rem;
-    }
-    .logo h3{
-        font-size: 0.8rem;
+@media (max-width: 600px) {
+    .navigation{
+        width: 100%;
     }
 }

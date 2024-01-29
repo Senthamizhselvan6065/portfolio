@@ -1,15 +1,23 @@
-.container{
+.container {
   max-width: 1300px !important;
   margin: 0 auto;
   position: relative;
+  padding: 0 1.5rem;
 }
 
-section{
+section {
   padding-top: 70px;
 }
 
-@media (max-width: 1300px) {
-   .container{
-    padding: 0 1.5rem;
-   }
+@media (max-width: 1050px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .container{
+    padding: 1rem 10px;
+  }
 }

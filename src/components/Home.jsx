@@ -12,29 +12,29 @@ const Home = () => {
   return (
     <section id='home' className='home-container'>
         <div className="home-content">
-            <h3>Hi I'am</h3>
-            <h2>senthamizh<span>selvan</span></h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe error quia numquam dolores eaque ratione quasi rerum maxime ut provident?</p>
+            <h3 className='home-content__sub-title'>Hi I'am</h3>
+            <h2 className='home-content__title'>senthamizh<span className='home-content__title--title'>selvan</span></h2>
+            <p className='home-content__desc'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe error quia numquam dolores eaque ratione quasi rerum maxime ut provident?</p>
         </div>
-        <div className="home-img">
-            <div>
+        <div className="home-img-card">
+            <div className='home-img'>
                <div className="tech-icon">
-                  <span className='react'><FaReact /></span>
+                  <span className='tech-icon__icon tech-icon__icon--react'><FaReact /></span>
                </div>
                  <img src={profile} alt="Profile" className='home-profile'/>
             </div>
-            <div>
+            <div className='home-img'>
                <div className="tech-icon">
-                  <span className='html'><FaHtml5 /></span>
+                  <span className='tech-icon__icon tech-icon__icon--html'><FaHtml5 /></span>
                </div>
                <div className="tech-icon">
-                  <span className='css'><FaCss3Alt /></span>
+                  <span className='tech-icon__icon tech-icon__icon--css'><FaCss3Alt /></span>
                </div>
                <div className="tech-icon">
-                  <span className='js'><TbBrandJavascript /></span>
+                  <span className='tech-icon__icon tech-icon__icon--js'><TbBrandJavascript /></span>
                </div>
                <div className="tech-icon">
-                  <span className='github'><FaGithubAlt /></span>
+                  <span onClick={()=>window.open("https://github.com/Senthamizhselvan6065")} className='tech-icon__icon tech-icon__icon--github'><FaGithubAlt /></span>
                </div>
             </div>
         </div>
